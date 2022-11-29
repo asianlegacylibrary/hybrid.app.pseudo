@@ -8,22 +8,18 @@ Input Text Processing
 
 
 # dropbox ------------------------------------------
-
 # connect dropbox
 
-# file
-
-# path
-# filename
-
 # event --------------------------------------------
-
 # monitor github
 
+# if dropbox add
+# path
+# filename
+# -------------------
+
+# process ---------------------------------------------------
 # file
-
-
-# both ---------------------------------------------------
 # characters
 # lines
 # folios
