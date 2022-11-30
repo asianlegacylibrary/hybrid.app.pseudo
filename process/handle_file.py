@@ -13,58 +13,33 @@ Check file:
 '''
 import os
 
-def handle_file(f):
-    '''Check incoming file
 
-    Return file if it passes, else return None
-    
-    
-    '''
+def handle_file_extension(f):
+    return os.path.splitext(f)[-1] == '.txt'
 
-    # assert that file exists and is not empty
+def handle_file_empty(f):
+    e = False
     if os.path.isfile(f):
         if not os.stat(f).st_size == 0:
-            file_extension = os.path.splitext(f)[-1]
-    else:
-        return None
+            e = True
+    return e 
+
+def check_file():
+
+    # assert that file exists and is not empty
+    
 
     # assert that file type is text, if RTF just rename suffix
-    if file_extension.lower() == ".txt":
-        return True
-    elif file_extension.lower() == ".rtf":
-        # convert to text file, I think we can just rename
-        print('RTF!')
-        return False
-    # elif missing extension
-    # try just adding the TXT extension
-    else:
-        print(f, "is an unknown file format.")
-        return False
 
+    # if dropbox:
+        # if META
+        # send META through test
 
-def test_file(f):
-        # assert that file exists
-        # assert that file isn't empty
-        # assert that file extension exists
-        # assert that file type is txt
-        # if dropbox:
-            # if META
-            # send META through test
-    print(type(f))
-    if isinstance(f, list):
-        # loop over the list
-        for s in f:
-            print(s)
-    elif isinstance(f, str):
-        # single item
-        print(f)
-    else:
-        print('Module requires file or list of files')
+    print('checking file')
+
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) > 1:
-        test_file(sys.argv[1])
-    else:
+    if len(sys.argv) == 0:
         print('Please supply file or list of files to test module...')
         

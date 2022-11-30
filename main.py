@@ -47,7 +47,7 @@ if __name__ == "__main__":
     print("INPUT TEXT PROCESSING--------------------------")
     print(sys.path)
     print(process.__file__)
-    process.test_file()
+    process.test_file('file')
     process.test_filename()
     process.test_path()
     process.test_chars()
