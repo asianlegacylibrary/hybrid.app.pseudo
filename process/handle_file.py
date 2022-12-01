@@ -24,10 +24,14 @@ def handle_file_empty(f):
             e = True
     return e 
 
-def check_file():
+def check_file(f):
 
     # assert that file exists and is not empty
-    
+    if handle_file_empty(f):
+        if handle_file_extension(f):
+            return True
+    else:
+        return False
 
     # assert that file type is text, if RTF just rename suffix
 
@@ -35,11 +39,16 @@ def check_file():
         # if META
         # send META through test
 
-    print('checking file')
-
+    
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) == 0:
+    if len(sys.argv) > 1:
+        print('Checking file: ', sys.argv[1])
+        if check_file(sys.argv[1]):
+            print('File passed...')
+        else:
+            print('File failed...')
+    else:
         print('Please supply file or list of files to test module...')
         
